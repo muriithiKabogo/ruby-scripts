@@ -110,31 +110,63 @@ end
 remove_duplicates([1, 2, 3, 4, 1, 2, 2, 3, 5, 6])
 
 
+#7. Write a Ruby program to check two given arrays of integers and test whether they have the same first element or 
+#they have the same last element.Both arrays length must be 1 or more.
+
+puts "Question 7"
+
+def checker4(theArray1,theArray2)
+	if (theArray1[0] == theArray2[0] || theArray1[-1] == theArray2[-1]) && theArray1.length >= 1 && theArray2.length >= 1
+		puts "true"
+	else
+		puts "False"
+	end
+
+end
+
+checker4([1,4,6,8],[1, 5,6])
+checker4([2,4,6,8],[1, 5,6])
+checker4([2,4,6,8],[1, 5,8])
 
 
 
+#8. Write a Ruby program to remove blank elements from a given array.
+
+puts "Question 8"
+
+def remove_blanks(theArray)
+	
+theArray2 = theArray.reject { |e| e.empty?}
+
+	print "Original array:\n"
+	print "#{theArray}\n"
+	print"Remove blank element from the above array:\n"
+	print "#{theArray2}\n"
+end
 
 
+ remove_blanks(["Red", "Green", "", "Blue", "White"])
 
 
+#9. Write a Ruby program to compute the sum of all the elements. The array length must be 3 or more.
 
+puts "Question 9"
 
+def compute_sum2(theArray)
+	sum = 0
 
+	if theArray.length >=3
+		theArray.map { |e| sum = sum+e  }
+		puts sum
+	else
+		puts "The array length must be 3 or more"
+	end
 
+end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+compute_sum2([2,2,2,2])
+compute_sum2([2,2,2])
+compute_sum2([2,2,2,1])
 
 
 
